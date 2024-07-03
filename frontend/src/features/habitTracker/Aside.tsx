@@ -1,18 +1,16 @@
 import { Stack, Typography } from "@mui/material";
-import { useMemo, useRef } from "react";
+import { useMemo } from "react";
 import NumberInputBasic from "../../components/NumberInputUI";
 import DividerUI from "../../components/DividerUI";
 import ReadButton from "./components/ReadButton";
 import { useHabitTrackerProps } from "./interface";
-import BookUI from "../../components/BookUI";
 import SelectableBook from "../../components/featured/SelectableBook";
 
 interface AsideWrapperProps {
-  bookImage: string;
   habitTracker: useHabitTrackerProps;
 }
 
-function Aside({ bookImage, habitTracker }: AsideWrapperProps) {
+function Aside({ habitTracker }: AsideWrapperProps) {
   const {
     startingPageInputVal,
     targetPageAmountInputVal,
@@ -28,7 +26,6 @@ function Aside({ bookImage, habitTracker }: AsideWrapperProps) {
     handleIsSelectingBookModalOpen,
     selectedBook,
   } = habitTracker;
-  const inputRef = useRef<any>(null);
 
   const renderInput = (
     label: string,

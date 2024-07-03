@@ -1,7 +1,5 @@
-import React from "react";
 import useSelectableBook from "../pure/useSelectableBook";
 import useBookTrackingApi from "../../hooks/queries/useBookTrackingApi";
-import { CaptiBookData } from "../../interfaces/globalState";
 import { useBookInsightsPageContext } from "../../pages/BookInsightsPage/BookInsightsPage";
 import { ObjectId } from "mongodb";
 

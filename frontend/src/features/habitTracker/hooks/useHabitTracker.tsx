@@ -2,7 +2,6 @@ import useReadingState from "./useReadingState";
 import useTimerStopwatch from "./useTimerStopwatch";
 import useSessionRecorder from "./useSessionRecorder";
 import { isEmptyNumber } from "../../helper";
-import { useEffect } from "react";
 
 export default function useHabitTracker() {
   const {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CaptiBookData } from "../../interfaces/globalState";
 import { ObjectId } from "mongodb";
 import useBookTrackingApi from "../../hooks/queries/useBookTrackingApi";

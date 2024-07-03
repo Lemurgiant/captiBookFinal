@@ -46,7 +46,7 @@ export default function useSessionRecorder() {
         bookImageURL,
         bookId
       ),
-    onSuccess: (data) => {
+    onSuccess: () => {
       setOnRecordSession(false);
     },
     onError: (error) => {

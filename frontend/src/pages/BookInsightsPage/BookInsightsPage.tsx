@@ -1,8 +1,7 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 import styled from "styled-components";
 import BookDetailsSummaryInstance from "../../features/bookDetailsSummary/BookDetailsSummaryInstance";
 import InsightsManagementInstance from "../../features/InsightsManagement/InsightsManagementInstance";
-import { CaptiBookData } from "../../interfaces/globalState";
 import {
   useBookInsightsPageContextInit,
   useBookInsightsPageProps,

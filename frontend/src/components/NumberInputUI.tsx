@@ -6,7 +6,6 @@ import {
 } from "@mui/base/Unstable_NumberInput";
 import { styled } from "@mui/system";
 import { useTheme } from "styled-components";
-import InputBase from "@mui/material/InputBase";
 
 const NumberInput = React.forwardRef(function CustomNumberInput(
   props: StyledNumberInputProps,
@@ -81,7 +80,7 @@ const NumberInputBasic = React.forwardRef<
       aria-label="Demo number input"
       placeholder="Type a number…"
       value={value}
-      onChange={(event, val) => setter(val)}
+      onChange={(_, val) => setter(val)}
       onInputChange={(e) => setter(Number(e.target.value))}
       background={theme.bg.dark} // Background color
       borderColor={theme.blant} // Border color

@@ -1,4 +1,3 @@
-import React from "react";
 import BookTrackingGraphInstance from "./components/BookTrackingGraphInstance";
 import useBookTrackingBarWithData from "./hooks/useBookTrackingBarWithData";
 import BookTrackingGraphSelect from "./components/BookTrackingGraphSelect";
@@ -7,7 +6,7 @@ const BookTrackingGraph = () => {
   const {
     bookTrackingBarDatum,
     bookTrackingBarDisplay,
-    isBookCollectionQueryLoading,
+    isCaptiBookCollectionQueryLoading,
     isBookCollectionQueryDataEmpty,
     bookTrackingGraphFilterVal,
     handleBookTrackingGraphFilterChange,
@@ -16,7 +15,7 @@ const BookTrackingGraph = () => {
     <BookTrackingGraphInstance
       barDatum={bookTrackingBarDatum}
       barDatumDisplay={bookTrackingBarDisplay}
-      isLoading={isBookCollectionQueryLoading}
+      isLoading={isCaptiBookCollectionQueryLoading}
       isEmpty={isBookCollectionQueryDataEmpty}
     >
       <BookTrackingGraphSelect

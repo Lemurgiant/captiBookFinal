@@ -1,6 +1,4 @@
 import { useState, useRef } from "react";
-import { Book, BookTrackingData } from "../../interface";
-import { CaptiBookData } from "../../../interfaces/globalState";
 import useSelectableBook from "../../pure/useSelectableBook";
 
 export default function useReadingState() {

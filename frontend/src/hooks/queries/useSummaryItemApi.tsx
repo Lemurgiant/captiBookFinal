@@ -1,18 +1,15 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import {
   addOneSummaryData,
   deleteOneSummaryData,
-  getAllProductivityDataAxios,
   updateOneSummaryData,
 } from "../../features/services";
-import { productivityData } from "../../features/interface";
 
 const useSummaryItemApi = () => {
   const queryClient = useQueryClient();
   const {
     mutate: addOneSummaryMutate,
     isPending: isAddOneSummaryPending,
-    isSuccess: isAddOneSummarySuccess,
   } = useMutation({
     mutationKey: ["addOneSummaryMutate"],
     mutationFn: addOneSummaryData,
@@ -26,7 +23,6 @@ const useSummaryItemApi = () => {
   const {
     mutate: updateOneSummaryMutate,
     isPending: isUpdateOneSummaryPending,
-    isSuccess: isUpdateOneSummarySuccess,
   } = useMutation({
     mutationKey: ["updateOneSummaryMutate"],
     mutationFn: updateOneSummaryData,

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getAllProductivityDataAxios } from "../../features/services";
-import { productivityData } from "../../features/interface";
+import { Session } from "../../interfaces/globalState";
 
 const STALE_TIME = 10000;
 
@@ -8,7 +8,7 @@ const useProductivityApi = () => {
   const {
     data: productivityQueryData = [],
     isLoading: isProductivityQueryLoading,
-  } = useQuery<productivityData[]>({
+  } = useQuery<Session[]>({
     queryKey: ["productivityQueryData"],
     queryFn: getAllProductivityDataAxios,
     staleTime: STALE_TIME,

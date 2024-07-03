@@ -1,9 +1,4 @@
-import {
-  Book,
-  CaptiBookData,
-  Session,
-  SummaryItem,
-} from "../interfaces/globalState";
+import { Book, CaptiBookData, Session } from "../interfaces/globalState";
 
 export const mapToBookCollection = (data: CaptiBookData[]): Book[] => {
   return data.map((bookTrackingApiData) => bookTrackingApiData.book);

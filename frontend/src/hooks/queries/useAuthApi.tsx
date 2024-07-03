@@ -1,7 +1,4 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import React, { useEffect, useState } from "react";
-import { BookTrackingData } from "../../features/interface";
-import { deleteOneBookCollectionDataAxios } from "../../features/services";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const fetchAuthStatusAxios = async () => {
@@ -12,7 +9,6 @@ const fetchAuthStatusAxios = async () => {
 };
 
 const useAuthApi = () => {
-  const [sampleState, setsampleState] = useState<string | null>("");
   const { data: authData, isLoading: authLoading } = useQuery<{
     isLoggedIn: boolean;
     userInfo: any;

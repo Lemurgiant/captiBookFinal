@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SPRING, TRANSITIONS } from "../../constants/constants";
+import { SPRING } from "../../constants/constants";
 import { withTransition } from "../../animations/withTransition";
 import TrackerBoard from "./components/TrackerBoard";
 import { useHabitTrackerProps } from "./interface";

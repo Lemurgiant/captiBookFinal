@@ -27,7 +27,6 @@ const useSettings = (): useSettingsProps => {
   const { userInfo } = useAuthApi();
   const {
     updateUserDisplayNameMutate,
-    isUpdateUserDisplayNameMutateSuccess,
     updateUserImageMutate,
     updateUserThemeMutate,
   } = useUserInfoMutate();

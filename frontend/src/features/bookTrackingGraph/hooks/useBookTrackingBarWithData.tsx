@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useBookTrackingBar from "./useBookTrackingBar";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQueryClient } from "@tanstack/react-query";
 import { bookTrackingGraphFilterVal } from "./../interface";
 import { fiveMostEfficientBooks, fiveMostReadBooks } from "../utils/helpers";
 import useBookCollectionQueryData from "../../../hooks/queries/useBookTrackingApi";
@@ -19,7 +19,7 @@ const useBookTrackingBarWithData = () => {
   };
   const {
     captiBookCollectionQueryData = [],
-    isBookCollectionQueryLoading,
+    isCaptiBookCollectionQueryLoading,
   } = useBookCollectionQueryData();
   const isBookCollectionQueryDataEmpty =
     captiBookCollectionQueryData?.length === 0;
@@ -43,7 +43,7 @@ const useBookTrackingBarWithData = () => {
   return {
     bookTrackingBarDatum,
     bookTrackingBarDisplay,
-    isBookCollectionQueryLoading,
+    isCaptiBookCollectionQueryLoading,
     isBookCollectionQueryDataEmpty,
     bookTrackingGraphFilterVal,
     handleBookTrackingGraphFilterChange,

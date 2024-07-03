@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { FaBook } from "react-icons/fa";
 import Stack from "@mui/material/Stack";
 

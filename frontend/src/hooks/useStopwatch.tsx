@@ -4,7 +4,7 @@ const useStopwatch = () => {
   const [startTime, setStartTime] = useState(0);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
-  const intervalRef = useRef<number | null>(null);
+  const intervalRef = useRef<any>(null);
 
   const startStopwatch = useCallback(() => {
     if (!isRunning) {
@@ -60,6 +60,7 @@ const useStopwatch = () => {
     startStopwatch,
     stopStopwatch,
     resetStopwatch,
+    startTime,
   };
 };
 

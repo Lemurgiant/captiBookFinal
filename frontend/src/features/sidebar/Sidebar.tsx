@@ -8,12 +8,8 @@ import { renderButtonGroupProps } from "./interface";
 import { NAV_BUTTON_GROUP_BOT, NAV_BUTTON_GROUP_TOP } from "./constants";
 import useSidebar from "./useSidebar";
 import { BiLogOut } from "react-icons/bi";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import LogoutButton from "./components/LogoutButton";
 import useAuthApi from "../../hooks/queries/useAuthApi";
-import { useEffect } from "react";
-
 //----------------------------------------------------------------//
 
 const renderButtonGroup: React.FC<renderButtonGroupProps> = ({

@@ -1,10 +1,7 @@
 import { Stack } from "@mui/material";
-import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import PrimaryTextField from "../../../components/PrimaryTextFieldUI";
 import PrimaryButtonUI from "../../../components/PrimaryButtonUI";
-import useAuthApi from "../../../hooks/queries/useAuthApi";
-import useUserInfoMutate from "../../../hooks/queries/useUserInfoMutate";
 import { useSettingsContext } from "../SettingsInstance";
 import { isEmptyString } from "./../../helper";
 

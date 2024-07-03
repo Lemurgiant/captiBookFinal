@@ -1,4 +1,3 @@
-import { useTheme } from "styled-components";
 import { BarDatumState } from "../interface";
 
 export const productivityBarDatumInit = (theme: any): BarDatumState => {

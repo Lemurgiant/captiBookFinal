@@ -1,9 +1,5 @@
-import { Box, Stack, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { Stack, Typography } from "@mui/material";
 import PrimaryTextField from "../../components/PrimaryTextFieldUI";
-import styled from "styled-components";
-import PrimaryFrameUI from "../../components/PrimaryFrameUI";
-import PrimaryButtonUI from "../../components/PrimaryButtonUI";
 import GoogleButton from "./GoogleButton";
 import useSignupForm from "./useSignupForm";
 import SignupFormWrapper from "./FormWrapper";

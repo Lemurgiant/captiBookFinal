@@ -4,7 +4,6 @@ import { TrackerBoardHelperProps } from "../interface";
 export default function TrackerBoardHelper({
   targetPageAmountInputVal,
   durationInputVal,
-  isCurrentlyReading,
   startingPageInputVal,
   stopwatchValue,
   timerValue,

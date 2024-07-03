@@ -1,5 +1,4 @@
 import { CaptiBookData } from "../../../interfaces/globalState";
-import { Book, BookCollectionApiData } from "../../interface";
 
 export function hasEverRead(book: CaptiBookData) {
   return book.latestReadDate !== null && book.sessions.length !== 0;

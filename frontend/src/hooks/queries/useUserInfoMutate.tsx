@@ -1,5 +1,4 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import React from "react";
 import {
   updateUserDisplayNameAxios,
   updateUserImageAxios,
@@ -8,12 +7,7 @@ import {
 
 const useUserInfoMutate = () => {
   const queryClient = useQueryClient();
-  const {
-    mutate: updateUserImageMutate,
-    isPending: isUpdateUserImageMutatePending,
-    isSuccess: isUpdateUserImageMutateSuccess,
-    isError: isUpdateUserImageMutateError,
-  } = useMutation({
+  const { mutate: updateUserImageMutate } = useMutation({
     mutationKey: ["updateUserImageMutate"],
     mutationFn: updateUserImageAxios,
     onSuccess: () => {
@@ -22,9 +16,7 @@ const useUserInfoMutate = () => {
   });
   const {
     mutate: updateUserDisplayNameMutate,
-    isPending: isUpdateUserDisplayNameMutatePending,
     isSuccess: isUpdateUserDisplayNameMutateSuccess,
-    isError: isUpdateUserDisplayNameMutateError,
   } = useMutation({
     mutationKey: ["updateUserDisplayNameMutate"],
     mutationFn: updateUserDisplayNameAxios,
@@ -33,12 +25,7 @@ const useUserInfoMutate = () => {
     },
   });
 
-  const {
-    mutate: updateUserThemeMutate,
-    isPending: isUpdateUserThemeMutatePending,
-    isSuccess: isUpdateUserThemeMutateSuccess,
-    isError: isUpdateUserThemeMutateError,
-  } = useMutation({
+  const { mutate: updateUserThemeMutate } = useMutation({
     mutationKey: ["updateUserThemeMutate"],
     mutationFn: updateUserThemeAxios,
     onSuccess: () => {

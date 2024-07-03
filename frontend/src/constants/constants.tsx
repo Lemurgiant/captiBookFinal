@@ -1,5 +1,3 @@
-import { MdDeleteForever } from "react-icons/md";
-
 export const TRANSITIONS = {
   NORMAL: "0.13s ease-out",
   STEEP: "0.1s cubic-bezier(0,.75,1,.99)",
@@ -7,7 +5,6 @@ export const TRANSITIONS = {
     STEEP: "cubic-bezier(0,.75,1,.99)",
   },
 };
-
 
 export function easeOutCubic(x: number): number {
   return 1 - Math.pow(1 - x, 3);

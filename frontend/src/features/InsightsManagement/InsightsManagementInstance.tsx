@@ -1,15 +1,8 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext } from "react";
 import styled from "styled-components";
 import TabGroup from "./TabGroup";
 import PrimaryFrameUI from "../../components/PrimaryFrameUI";
-import PrimaryButtonUI from "../../components/PrimaryButtonUI";
-import { BookIconUI } from "../../components/Icons";
-import { QuoteItem, SummaryItem, TermItem } from "../../interfaces/globalState";
-import DividerUI from "../../components/DividerUI";
-import Item from "./Item";
-import { ObjectId } from "mongodb";
 import { AddItemModal } from "./components/AddItemModal";
-import useSummaryItemApi from "../../hooks/queries/useSummaryItemApi";
 import {
   useInsightsManagementContextInit,
   useInsightsManagementProps,

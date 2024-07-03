@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import { NORMAL_TRANSITION } from "../../constants";
 import {
   ExpandableProps,
-  NavButtonItem,
   NavButtonProps,
   NavButtonWrapperProps,
 } from "../interface";

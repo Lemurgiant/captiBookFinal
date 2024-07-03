@@ -1,4 +1,3 @@
-import React from "react";
 import PrimaryButtonUI from "../../../components/PrimaryButtonUI";
 import { useInsightsManagementContext } from "../InsightsManagementInstance";
 import { BookIconUI } from "../../../components/Icons";

@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import PrimaryFrameUI from "../../components/PrimaryFrameUI";
-import { TRANSITIONS } from "../../constants/constants";
-
 const FormWrapper = styled(PrimaryFrameUI)`
   width: 24rem;
   background: ${({ theme }) => theme.dark};

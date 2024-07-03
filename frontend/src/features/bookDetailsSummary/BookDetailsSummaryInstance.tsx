@@ -1,15 +1,10 @@
-import { Stack, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import SelectableBook from "../../components/featured/SelectableBook";
-import useSelectableBook from "../pure/useSelectableBook";
 import SelectBookModalPure from "../pure/SelectBookModalPure";
-import useBookTrackingApi from "../../hooks/queries/useBookTrackingApi";
 import PrimaryFrameUI from "../../components/PrimaryFrameUI";
 import styled from "styled-components";
-import DividerUI from "../../components/DividerUI";
 import BookDetailsSectionRow from "./components/BookDetailsSectionRow";
 import useBookDetailsSummary from "./useBookDetailsSummary";
-import { CaptiBookData } from "../../interfaces/globalState";
 
 const BookDetailsSummaryInstanceWrapper = styled.div`
   display: flex;

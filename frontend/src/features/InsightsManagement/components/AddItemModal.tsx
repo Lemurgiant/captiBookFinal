@@ -1,19 +1,11 @@
 import { useTheme } from "styled-components";
 import PrimaryButtonUI from "../../../components/PrimaryButtonUI";
 import AddItemModalInputPack from "./AddItemModalInputPack";
-import { useEffect, useRef } from "react";
 import PrimaryModalUI from "../../../components/PrimaryModal/PrimaryModalUI";
 import { Stack } from "@mui/material";
-import { capitalizeFirstLetter, isEmptyString } from "../../helper";
+import { capitalizeFirstLetter } from "../../helper";
 import { useInsightsManagementContext } from "../InsightsManagementInstance";
 import PrimarySpinner from "../../../components/PrimarySpinner";
-import { InsightsManagementTabVal } from "../interface";
-
-interface AddItemModalProps {
-  isShowing: boolean;
-  handleClose: () => void;
-}
-
 interface SaveButtonProps {
   label: string;
   handleAddItem: () => void;
@@ -119,14 +111,7 @@ const InputPackStack = () => {
 
 export function AddItemModal() {
   const {
-    inputValues,
-    addItemModalState: {
-      isOpen,
-      handleClose,
-      inputRefs,
-      inputChangeHandlers,
-      mutateHandlers,
-    },
+    addItemModalState: { isOpen, handleClose, mutateHandlers },
   } = useInsightsManagementContext();
   const { tabVal } = useInsightsManagementContext();
   const head = `ADD ${tabVal.toUpperCase()}`;

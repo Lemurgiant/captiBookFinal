@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Stack } from "@mui/material";
 import ProductivityGraph from "../../features/productivityGraph/";
 import BookTrackingGraph from "../../features/bookTrackingGraph/BookTrackingGraph";
 import styled from "styled-components";
 import BookTrackingHistory from "../../features/bookTrackingHistory/BookTrackingHistory";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const HomePage: React.FC = () => {
   return (

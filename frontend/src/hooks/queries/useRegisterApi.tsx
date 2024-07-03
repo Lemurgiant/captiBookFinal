@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { loginAxios, signupAxios } from "../../features/services";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 
 const useRegisterApi = () => {
   const [loginMutateErrMessage, setLoginMutateErrMessage] = useState("");

@@ -2,10 +2,7 @@ import styled from "styled-components";
 import { DeleteIconUI } from "../../components/Icons";
 import PrimaryTinyButtonUI from "../../components/PrimaryTinyButtonUI";
 import HoverableBook, { BUTTON_SHADOWS } from "../pure/HoverableBook";
-import { Book } from "../interface";
 import { CollectedBookUIProps } from "./interface";
-import ConfirmDeleteModal from "../../components/Modals/ConfirmDeleteModal";
-import { useEffect } from "react";
 
 const CollectionBookUIOverlayChildrenUI = styled.div`
   width: 100%;
@@ -26,7 +23,6 @@ export default function CollectedBook({
   book,
   handleOpenConfirmDeleteModal,
   bookTrackingId,
-  isConfirmDeleteModalOpen,
 }: CollectedBookUIProps) {
   return (
     <>

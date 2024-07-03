@@ -1,9 +1,4 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import React, { useEffect } from "react";
-import {
-  BookCollectionApiData,
-  BookTrackingData,
-} from "../../features/interface";
 import {
   deleteOneBookCollectionDataAxios,
   getAllCaptiBookCollectionApi,

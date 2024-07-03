@@ -3,14 +3,9 @@ import useSummaryItemApi from "../../hooks/queries/useSummaryItemApi";
 import useTermItemApi from "../../hooks/queries/useTermItemApi";
 import useQuoteItemApi from "../../hooks/queries/useQuoteItemApi";
 import { useBookInsightsPageContext } from "../../pages/BookInsightsPage/BookInsightsPage";
-import { isEmptyString, untitledHandler } from "../helper";
+import { isEmptyString } from "../helper";
 import { InsightsManagementTabVal, inputValuesProps } from "./interface";
-import {
-  QuoteItem,
-  SummaryItem,
-  TermItem,
-  TermItemLocal,
-} from "../../interfaces/globalState";
+import { QuoteItem, SummaryItem, TermItem } from "../../interfaces/globalState";
 import { useQueryClient } from "@tanstack/react-query";
 import { ObjectId } from "mongodb";
 
@@ -244,7 +239,7 @@ const useInsightsManagement = () => {
     itemCollection.find((item) => item._id === selectedItemId) ?? null;
 
   const handleTabVal = (
-    event: React.ChangeEvent<{}>,
+    _: React.ChangeEvent<{}>,
     newValue: InsightsManagementTabVal
   ) => {
     setTabVal(newValue);

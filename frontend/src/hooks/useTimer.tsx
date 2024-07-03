@@ -5,7 +5,7 @@ const useTimer = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    let intervalId;
+    let intervalId: any;
 
     if (isActive) {
       intervalId = setInterval(() => {
@@ -23,7 +23,7 @@ const useTimer = () => {
     return () => clearInterval(intervalId);
   }, [isActive]);
 
-  const startTimer = (initialDuration) => {
+  const startTimer = (initialDuration: any) => {
     setDuration(initialDuration);
     setIsActive(true);
   };
@@ -33,7 +33,7 @@ const useTimer = () => {
     setDuration(0);
   };
 
-  const formatDuration = (timeInSeconds) => {
+  const formatDuration = (timeInSeconds: any) => {
     const minutes = Math.floor(timeInSeconds / 60);
     const seconds = timeInSeconds % 60;
     return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(

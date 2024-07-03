@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { EditIconUI } from "../../../components/Icons";
-import useAuthApi from "../../../hooks/queries/useAuthApi";
-import useUserInfoMutate from "../../../hooks/queries/useUserInfoMutate";
 import { useSettingsContext } from "../SettingsInstance";
 
 const ProfilePictureEditableWrapper = styled.label`

@@ -1,8 +1,6 @@
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectProps } from "@mui/material/Select";
-import styled, { useTheme } from "styled-components";
+import { useTheme } from "styled-components";
 import { ProductivityGraphSelectProps } from "../interface";
 import { StyledInput, StyledSelect } from "../../../components/PrimarySelect";
 

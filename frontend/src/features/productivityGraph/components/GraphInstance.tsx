@@ -1,8 +1,7 @@
-import { Stack, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
 import { Bar } from "react-chartjs-2";
-import styled, { css, keyframes, useTheme } from "styled-components";
-import PrimarySpinner from "../../../components/PrimarySpinner";
-import React, { CSSProperties, useEffect } from "react";
+import styled from "styled-components";
+import React from "react";
 import { BarDatumState } from "../../interface";
 import BarDatumMotion from "../../../animations/BarDatumMotion";
 import LabelHead from "../../../components/LabelHead";
@@ -48,7 +47,6 @@ const GraphInstance: React.FC<ProductivityGraphUIProps> = ({
   graphLabel,
   isEmpty,
 }) => {
-  const theme = useTheme();
   const options = {};
   const isBarPresent = !isLoading && !isEmpty;
 

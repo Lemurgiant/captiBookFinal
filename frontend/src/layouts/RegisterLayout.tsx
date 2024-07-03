@@ -1,6 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-import bgImage from "../../assets/bg.png";
 import { Box, Typography } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import DividerUI from "../components/DividerUI";

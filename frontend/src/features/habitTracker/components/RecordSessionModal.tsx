@@ -1,7 +1,6 @@
 import { useTheme } from "styled-components";
 import { isEmptyNumber } from "../../helper";
 import { Stack, Typography } from "@mui/material";
-import { useEffect } from "react";
 import PrimaryModalUI from "../../../components/PrimaryModal/PrimaryModalUI";
 import PrimaryFrameUI from "../../../components/PrimaryFrameUI";
 import DividerUI from "../../../components/DividerUI";

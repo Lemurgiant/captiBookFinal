@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import useAuthApi from "../../hooks/queries/useAuthApi";
-import { useEffect, useState } from "react";
-import PrimarySpinner from "../PrimarySpinner";
-import AppLayout from "../../layouts/AppLayout";
+import { useEffect } from "react";
 
 const withAuth = (WrappedComponent: React.ComponentType<any>) => {
   return (props: any) => {

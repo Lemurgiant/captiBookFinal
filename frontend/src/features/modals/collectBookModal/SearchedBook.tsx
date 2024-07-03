@@ -1,10 +1,8 @@
 import { DefaultTheme, useTheme } from "styled-components";
-import { Book } from "../../interface";
 import PrimaryTinyButtonUI from "../../../components/PrimaryTinyButtonUI";
 import HoverableBook, { BUTTON_SHADOWS } from "../../pure/HoverableBook";
 import { CheckMarkIconUI, PlusIconUI } from "../../../components/Icons";
 import { Tooltip } from "@mui/material";
-import { UseMutateFunction } from "@tanstack/react-query";
 import { SearchedBookProps } from "./interfaces";
 
 const renderAlreadyAddedButton = (theme: DefaultTheme) => (

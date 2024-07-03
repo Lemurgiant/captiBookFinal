@@ -4,7 +4,6 @@ import { ImStatsBars } from "react-icons/im";
 import { IoHome } from "react-icons/io5";
 import { NavButtonItem } from "./interface";
 import { IoMdSettings } from "react-icons/io";
-import { BiLogOut } from "react-icons/bi";
 
 export const SIDEBAR_WIDTH_EXPANDED: string = "14rem";
 export const SIDEBAR_WIDTH_COLLAPSED: string = "5rem";

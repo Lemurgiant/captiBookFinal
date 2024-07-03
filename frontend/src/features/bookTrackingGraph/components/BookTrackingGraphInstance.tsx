@@ -1,10 +1,8 @@
 import { Bar } from "react-chartjs-2";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
 import BookUI from "../../../components/BookUI";
 import { BarDatumState } from "../../interface";
-import PrimarySpinner from "../../../components/PrimarySpinner";
 import { bookTrackingBarDisplayState } from "../interface";
 import BarDatumMotion from "../../../animations/BarDatumMotion";
 import LabelHead from "../../../components/LabelHead";
@@ -49,7 +47,6 @@ export default function BookTrackingGraphInstance({
   isEmpty,
   children,
 }: BookTrackingGraphUIProps) {
-  const theme = useTheme();
   const options = {
     indexAxis: "y",
     scales: {
@@ -80,7 +77,7 @@ export default function BookTrackingGraphInstance({
             </Stack>
             <div style={{ flex: 7 }}>
               {isBarPresent ? (
-                <Bar data={barDatum} options={options} height={350} />
+                <Bar data={barDatum} options={options as any} height={350} />
               ) : (
                 <BarDatumMotion motion={isLoading ? "LOADING" : "EMPTY"} />
               )}

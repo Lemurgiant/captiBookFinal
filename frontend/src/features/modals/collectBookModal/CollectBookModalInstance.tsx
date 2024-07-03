@@ -3,8 +3,6 @@ import PrimaryModalUI from "../../../components/PrimaryModal/PrimaryModalUI";
 import PrimarySearchInput from "../../../components/PrimarySearchInput";
 import AddBookGrid from "./CollectBookGrid";
 import styled from "styled-components";
-import { Book } from "../../interface";
-import { UseMutateFunction } from "@tanstack/react-query";
 import { CollectBookModalInstanceProps } from "./interfaces";
 
 const AddBookGridSectionUI = styled.div`

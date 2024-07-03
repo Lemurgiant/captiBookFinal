@@ -1,10 +1,7 @@
 import styled from "styled-components";
-import { Book, BookTrackingData } from "../interface";
 import PrimarySpinner from "../../components/PrimarySpinner";
-import HeaderUI from "../../components/HeaderUI";
 import CollectedBook from "./CollectedBook";
 import { LibraryGridProps } from "./interface";
-import { useEffect } from "react";
 import ConfirmDeleteModal from "../../components/Modals/ConfirmDeleteModal";
 import { CaptiBookData } from "../../interfaces/globalState";
 import { Typography } from "@mui/material";

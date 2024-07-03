@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { BarDatumState, BookCollectionApiData } from "../../interface";
+import { useState } from "react";
+import { BarDatumState } from "../../interface";
 import { bookTrackingBarDatumInit } from "../constants";
 import { bookTrackingBarDisplayState } from "../interface";
 import { CaptiBookData } from "../../../interfaces/globalState";

@@ -1,14 +1,9 @@
-import React, { useEffect, useRef } from "react";
 import FormWrapper from "./FormWrapper";
 import PrimaryTextField from "../../components/PrimaryTextFieldUI";
 import useLoginForm from "./useLoginForm";
 import { Stack, Typography } from "@mui/material";
-import PrimaryButtonUI from "../../components/PrimaryButtonUI";
 import GoogleButton from "./GoogleButton";
 import ErrorTypography from "./ErrorTypography";
-import useRegisterApi from "../../hooks/queries/useRegisterApi";
-import PrimarySpinner from "../../components/PrimarySpinner";
-import { useTheme } from "styled-components";
 import FormButton from "./FormButton";
 
 const LoginForm = () => {
@@ -22,7 +17,6 @@ const LoginForm = () => {
     loginMutateErrMessage,
     handleLogin,
   } = useLoginForm();
-  const theme = useTheme();
 
   return (
     <FormWrapper height="28rem">

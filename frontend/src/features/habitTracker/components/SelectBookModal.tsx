@@ -1,9 +1,4 @@
-import React from "react";
-import PrimaryModalUI from "../../../components/PrimaryModal/PrimaryModalUI";
-import { useHabitTrackerProps } from "../interface";
 import useBookTrackingApi from "../../../hooks/queries/useBookTrackingApi";
-import { CaptiBookData } from "../../../interfaces/globalState";
-import useHabitTracker from "../hooks/useHabitTracker";
 import { useHabitTrackerContext } from "../HabitTrackerInstance";
 import SelectBookModalPure from "../../pure/SelectBookModalPure";
 

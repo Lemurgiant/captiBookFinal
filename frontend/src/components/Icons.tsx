@@ -2,9 +2,6 @@ import { MdDeleteForever } from "react-icons/md";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaBook } from "react-icons/fa6";
-import { BiSolidBookAdd } from "react-icons/bi";
-import { GrFormAdd } from "react-icons/gr";
-import { IoIosAdd } from "react-icons/io";
 import { FaPlus } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 

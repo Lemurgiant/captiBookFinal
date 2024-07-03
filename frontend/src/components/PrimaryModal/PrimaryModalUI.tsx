@@ -1,4 +1,4 @@
-import styled, { css, useTheme } from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { SPRING } from "../../constants/constants";
 import { CSSProperties } from "react";
 import PrimaryTinyButtonUI from "../PrimaryTinyButtonUI";

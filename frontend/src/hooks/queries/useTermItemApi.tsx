@@ -1,19 +1,15 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import {
-  addOneSummaryData,
   addOneTermData,
   deleteOneTermData,
-  getAllProductivityDataAxios,
   updateOneTermData,
 } from "../../features/services";
-import { productivityData } from "../../features/interface";
 
 const useTermItemApi = () => {
   const queryClient = useQueryClient();
   const {
     mutate: addOneTermMutate,
     isPending: isAddOneTermPending,
-    isSuccess: isAddOneTermSuccess,
   } = useMutation({
     mutationKey: ["addOneTermMutate"],
     mutationFn: addOneTermData,

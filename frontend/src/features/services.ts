@@ -1,8 +1,6 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { BookCollectionApiData, BookTrackingData } from "./interface";
 import { ObjectId } from "mongodb";
 import {
-  Book,
   BookLocal,
   CaptiBookData,
   QuoteItem,

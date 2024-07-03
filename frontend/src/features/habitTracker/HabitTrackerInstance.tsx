@@ -3,11 +3,9 @@ import styled from "styled-components";
 import { useHabitTrackerContextInit, useHabitTrackerProps } from "./interface";
 import Aside from "./Aside";
 import TrackerHead from "./components/TrackerHead";
-import PrimaryFrameUI from "../../components/PrimaryFrameUI";
 import Body from "./Body";
 import RecordSessionModal from "./components/RecordSessionModal";
 import SelectBookModal from "./components/SelectBookModal";
-import useHabitTracker from "./hooks/useHabitTracker";
 import GlowableFrame from "./components/GlowableFrame";
 
 const HabitTrackerPageWrapper = styled.div`
@@ -25,7 +23,6 @@ const Head = styled.div`
 
 interface HabitTrackerPageProps {
   habitTracker: useHabitTrackerProps;
-  bookImage: string;
 }
 
 const HabitTrackerContext = createContext<useHabitTrackerProps>(
@@ -34,7 +31,6 @@ const HabitTrackerContext = createContext<useHabitTrackerProps>(
 
 export default function HabitTrackerInstance({
   habitTracker,
-  bookImage,
 }: HabitTrackerPageProps) {
   return (
     <HabitTrackerPageWrapper>
@@ -45,7 +41,7 @@ export default function HabitTrackerInstance({
       </Head>
       <HabitTrackerContext.Provider value={habitTracker}>
         <GlowableFrame isGlowing={habitTracker.isCurrentlyReading}>
-          <Aside habitTracker={habitTracker} bookImage={bookImage} />
+          <Aside habitTracker={habitTracker} />
         </GlowableFrame>
         <GlowableFrame isGlowing={habitTracker.isCurrentlyReading}>
           <Body habitTracker={habitTracker} />

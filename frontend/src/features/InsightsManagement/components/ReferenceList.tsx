@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
 import {
   QuoteItem,
   SummaryItem,
   TermItem,
 } from "../../../interfaces/globalState";
-import { ObjectId } from "mongodb";
 import Item from "../Item";
 import DividerUI from "../../../components/DividerUI";
 import { useInsightsManagementContext } from "../InsightsManagementInstance";
@@ -39,7 +37,7 @@ const ReferenceListPure: React.FC<ReferenceListPureProps> = ({
   } = useInsightsManagementContext();
   return (
     <>
-      {InsightItemCollection.map((item, index) => (
+      {InsightItemCollection.map((item) => (
         <>
           <Item
             isSelected={item._id === selectedItemId}

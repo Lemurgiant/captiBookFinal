@@ -59,24 +59,22 @@ const CollectedBooksGridPure: React.FC<CollectedBooksGridProps> = ({
   return (
     <LibraryGridWrapper>
       <LibraryGridUIon>
-        {captiBookDataCollection.map(
-          (captiBookData: CaptiBookData, index: number) => (
-            <HoverableBook
-              bookImageURL={captiBookData.book.imageURL}
-              onHoverChildren={
-                <Box style={BUTTON_SHADOWS} borderRadius={"0.4rem"}>
-                  <PrimaryButtonUI
-                    onClick={() => {
-                      handleSelectBookId(captiBookData._id);
-                    }}
-                  >
-                    SELECT
-                  </PrimaryButtonUI>
-                </Box>
-              }
-            />
-          )
-        )}
+        {captiBookDataCollection.map((captiBookData: CaptiBookData) => (
+          <HoverableBook
+            bookImageURL={captiBookData.book.imageURL}
+            onHoverChildren={
+              <Box style={BUTTON_SHADOWS} borderRadius={"0.4rem"}>
+                <PrimaryButtonUI
+                  onClick={() => {
+                    handleSelectBookId(captiBookData._id);
+                  }}
+                >
+                  SELECT
+                </PrimaryButtonUI>
+              </Box>
+            }
+          />
+        ))}
       </LibraryGridUIon>
     </LibraryGridWrapper>
   );

@@ -1,11 +1,11 @@
 import { Stack } from "@mui/material";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 import PrimaryTextField from "../../../components/PrimaryTextFieldUI";
 import PrimaryButtonUI from "../../../components/PrimaryButtonUI";
 import DividerUI from "../../../components/DividerUI";
 import AnimatedReadingInProgress from "./AnimatedReadingInProgress";
 import TrackerBoardHelper from "./TrackerBoardHelperUI";
-import { TrackerBoardHelperProps, TrackerBoardProps } from "../interface";
+import { TrackerBoardProps } from "../interface";
 
 const TrackerBoardUIon = styled.div`
   display: flex;
@@ -25,8 +25,6 @@ export default function TrackerBoard({
   stopwatchValue,
   timerValue,
 }: TrackerBoardProps) {
-  const theme = useTheme();
-
   return (
     <TrackerBoardUIon style={style}>
       <Stack alignItems={"center"} gap="4rem" width="100%">

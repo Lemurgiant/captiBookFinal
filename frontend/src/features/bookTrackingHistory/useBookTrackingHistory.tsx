@@ -1,4 +1,3 @@
-import React from "react";
 import useBookTrackingApi from "../../hooks/queries/useBookTrackingApi";
 import { mapToSessionCollection } from "../../global/mapper";
 

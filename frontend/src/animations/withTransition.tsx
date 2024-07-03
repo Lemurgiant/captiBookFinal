@@ -31,7 +31,7 @@ export const withTransition = <P extends object>(
     return (
       <>
         {transitions((style, item) =>
-          item ? <AnimatedComponent style={style} {...(rest as P)} /> : null
+          item ? <AnimatedComponent style={style} {...(rest as any)} /> : null
         )}
       </>
     );

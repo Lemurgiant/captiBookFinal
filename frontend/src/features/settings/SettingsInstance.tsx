@@ -1,10 +1,7 @@
 import { Stack, Typography } from "@mui/material";
-import React, { createContext, useContext, useState } from "react";
-import styled, { useTheme } from "styled-components";
+import React, { createContext, useContext } from "react";
+import styled from "styled-components";
 import ProfilePictureEditable from "./components/ProfilePictureEditable";
-import PrimaryTextField from "../../components/PrimaryTextFieldUI";
-import PrimaryButtonUI from "../../components/PrimaryButtonUI";
-import useAuthApi from "../../hooks/queries/useAuthApi";
 import AccountSettings from "./components/AccountSettings";
 import useSettings, {
   useSettingsContextInit,
@@ -52,7 +49,6 @@ const ColorDivSet: React.FC<ColorDivSetProps> = ({
   dark,
   ...props
 }) => {
-  const theme = useTheme();
   return (
     <ColorDivSetWrapper isSelected={isSelected} {...props}>
       <ColorDiv bgcolor={primary} />
@@ -65,7 +61,6 @@ const ColorDivSet: React.FC<ColorDivSetProps> = ({
 const SettingsContext = createContext<useSettingsProps>(useSettingsContextInit);
 
 const SettingsInstance: React.FC = () => {
-  const theme = useTheme();
   const settingsState = useSettings();
   return (
     <SettingsContext.Provider value={settingsState}>

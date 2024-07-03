@@ -1,15 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import AddItemModalInputPack from "./AddItemModalInputPack";
 import { Box, Stack } from "@mui/material";
 import SaveContentButton from "./SaveContentButton";
 import { useInsightsManagementContext } from "../InsightsManagementInstance";
-import {
-  QuoteItem,
-  SummaryItem,
-  TermItem,
-  TermItemLocal,
-} from "../../../interfaces/globalState";
-import { isEmptyString } from "../../helper";
 
 const ContentEditor = () => {
   const ref = useRef(null);
@@ -50,7 +43,7 @@ const ContentEditor = () => {
             maxRows={18}
             isVertical={true}
             textareaRef={ref}
-            value={absoluteValues.summary}
+            value={absoluteValues.summary ?? ""}
             onChange={inputChangeHandlers.summary}
             placeholder="Enter summary..."
           />
@@ -60,7 +53,7 @@ const ContentEditor = () => {
             maxRows={2}
             isVertical={true}
             textareaRef={ref}
-            value={absoluteValues.summaryReference}
+            value={absoluteValues.summaryReference ?? ""}
             onChange={inputChangeHandlers.summaryReference}
             placeholder="Enter summary..."
           />
@@ -80,7 +73,7 @@ const ContentEditor = () => {
             maxRows={6}
             isVertical={true}
             textareaRef={ref}
-            value={absoluteValues.definition}
+            value={absoluteValues.definition ?? ""}
             onChange={inputChangeHandlers.definition}
             placeholder="Enter summary..."
           />
@@ -91,7 +84,7 @@ const ContentEditor = () => {
               maxRows={1}
               isVertical={false}
               textareaRef={ref}
-              value={absoluteValues.term}
+              value={absoluteValues.term ?? ""}
               onChange={inputChangeHandlers.term}
               placeholder="Enter term..."
             />
@@ -113,7 +106,7 @@ const ContentEditor = () => {
               maxRows={6}
               isVertical={true}
               textareaRef={ref}
-              value={absoluteValues.quote}
+              value={absoluteValues.quote ?? ""}
               onChange={inputChangeHandlers.quote}
               placeholder="Enter summary..."
             />
@@ -123,7 +116,7 @@ const ContentEditor = () => {
               maxRows={2}
               isVertical={true}
               textareaRef={ref}
-              value={absoluteValues.quoteReference}
+              value={absoluteValues.quoteReference ?? ""}
               onChange={inputChangeHandlers.quoteReference}
               placeholder="Enter term..."
             />
