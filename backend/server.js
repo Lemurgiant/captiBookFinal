@@ -40,7 +40,7 @@ app.use(passport.session());
 
 // CORS setup
 const corsOptions = {
-  origin: "http://localhost:5173", // Frontend URL
+  origin: "https://6684e8d02197d593c754b4a7--lucent-quokka-c30137.netlify.app", // Frontend URL
   credentials: true, // Allow cookies to be sent
 };
 app.use(cors(corsOptions));
@@ -57,8 +57,10 @@ app.get(
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:5173/",
-    failureRedirect: "http://localhost:5173/",
+    successRedirect:
+      "https://6684e8d02197d593c754b4a7--lucent-quokka-c30137.netlify.app/",
+    failureRedirect:
+      "https://6684e8d02197d593c754b4a7--lucent-quokka-c30137.netlify.app/",
   })
 );
 
