@@ -20,6 +20,8 @@ import {
 //   return []; // Return an empty array or appropriate default value on error
 // }
 
+const web = "https://captibookfinal-1.onrender.com/";
+
 export async function tryCatchAxiosGet<T>(
   config: AxiosRequestConfig
 ): Promise<T> {
@@ -44,7 +46,7 @@ export async function getAllCaptiBookCollectionApi(): Promise<CaptiBookData[]> {
   const config = {
     method: "get",
     maxBodyLength: Infinity,
-    url: "http://localhost:5000/api/get-all-bookcollection-data",
+    url: `${web}api/get-all-bookcollection-data`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -85,7 +87,7 @@ export async function addOneBookCollectionDataAxios(
   let config: AxiosRequestConfig = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "http://localhost:5000/api/add-one-bookcollection-data",
+    url: `${web}api/add-one-bookcollection-data`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -100,7 +102,7 @@ export async function deleteOneBookCollectionDataAxios(id: ObjectId) {
   let config = {
     method: "delete",
     maxBodyLength: Infinity,
-    url: `http://localhost:5000/api/delete-one-bookcollection-data/${id}`,
+    url: `${web}api/delete-one-bookcollection-data/${id}`,
     headers: {},
     withCredentials: true,
   };
@@ -128,7 +130,7 @@ export async function recordProductivityDataAxios(
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "http://localhost:5000/api/record-productivity-data",
+    url: `${web}api/record-productivity-data`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -143,7 +145,7 @@ export async function getAllProductivityDataAxios(): Promise<Session[]> {
   const config = {
     method: "get",
     maxBodyLength: Infinity,
-    url: "http://localhost:5000/api/get-all-productivity-data",
+    url: `${web}api/get-all-productivity-data`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -163,7 +165,7 @@ export async function addOneSummaryData(summaryData: SummaryItemLocal) {
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "http://localhost:5000/api/add-one-summary-data",
+    url: `${web}api/add-one-summary-data`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -183,7 +185,7 @@ export async function updateOneSummaryData(summaryData: SummaryItem) {
   let config = {
     method: "patch",
     maxBodyLength: Infinity,
-    url: `http://localhost:5000/api/update-one-summary-data/${summaryData._id}`,
+    url: `${web}api/update-one-summary-data/${summaryData._id}`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -197,7 +199,7 @@ export async function deleteOneSummaryData(summaryId: ObjectId) {
   let config = {
     method: "delete",
     maxBodyLength: Infinity,
-    url: `http://localhost:5000/api/delete-one-summary-data/${summaryId}`,
+    url: `${web}api/delete-one-summary-data/${summaryId}`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -216,7 +218,7 @@ export async function addOneTermData(termData: TermItemLocal) {
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "http://localhost:5000/api/add-one-term-data",
+    url: `${web}api/add-one-term-data`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -236,7 +238,7 @@ export async function updateOneTermData(termData: TermItem) {
   let config = {
     method: "patch",
     maxBodyLength: Infinity,
-    url: `http://localhost:5000/api/update-one-term-data/${termData._id}`,
+    url: `${web}api/update-one-term-data/${termData._id}`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -250,7 +252,7 @@ export async function deleteOneTermData(termId: ObjectId) {
   let config = {
     method: "delete",
     maxBodyLength: Infinity,
-    url: `http://localhost:5000/api/delete-one-term-data/${termId}`,
+    url: `${web}api/delete-one-term-data/${termId}`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -269,7 +271,7 @@ export async function addOneQuoteData(quoteData: QuoteItemLocal) {
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "http://localhost:5000/api/add-one-quote-data",
+    url: `${web}api/add-one-quote-data`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -289,7 +291,7 @@ export async function updateOneQuoteData(quoteData: QuoteItem) {
   let config = {
     method: "patch",
     maxBodyLength: Infinity,
-    url: `http://localhost:5000/api/update-one-quote-data/${quoteData._id}`,
+    url: `${web}api/update-one-quote-data/${quoteData._id}`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -303,7 +305,7 @@ export async function deleteOneQuoteData(quoteId: ObjectId) {
   let config = {
     method: "delete",
     maxBodyLength: Infinity,
-    url: `http://localhost:5000/api/delete-one-quote-data/${quoteId}`,
+    url: `${web}api/delete-one-quote-data/${quoteId}`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -332,7 +334,7 @@ export async function signupAxios({
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: `http://localhost:5000/api/signup`,
+    url: `${web}api/signup`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -354,7 +356,7 @@ export async function loginAxios({
   const data = JSON.stringify({ email, password });
   const config = {
     method: "post",
-    url: "http://localhost:5000/api/login",
+    url: `${web}api/login`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -370,7 +372,7 @@ export async function updateUserImageAxios(base64: string) {
   const data = JSON.stringify({ base64 });
   const config = {
     method: "post",
-    url: "http://localhost:5000/api/update-user-image",
+    url: `${web}api/update-user-image`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -385,7 +387,7 @@ export async function updateUserDisplayNameAxios(displayName: string) {
   const data = JSON.stringify({ displayName });
   const config = {
     method: "post",
-    url: "http://localhost:5000/api/update-user-display-name",
+    url: `${web}api/update-user-display-name`,
     headers: {
       "Content-Type": "application/json",
     },
@@ -400,7 +402,7 @@ export async function updateUserThemeAxios(theme: 0 | 1) {
   const data = JSON.stringify({ theme });
   const config = {
     method: "post",
-    url: "http://localhost:5000/api/update-user-theme",
+    url: `${web}api/update-user-theme`,
     headers: {
       "Content-Type": "application/json",
     },
