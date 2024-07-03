@@ -20,7 +20,7 @@ import {
 //   return []; // Return an empty array or appropriate default value on error
 // }
 
-const webURL = "https://captibookfinal-1.onrender.com/";
+export const webURL = "https://captibookfinal-1.onrender.com/";
 
 export async function tryCatchAxiosGet<T>(
   config: AxiosRequestConfig

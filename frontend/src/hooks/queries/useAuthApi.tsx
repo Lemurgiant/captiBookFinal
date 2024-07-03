@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { webURL } from "../../features/services";
 
 const fetchAuthStatusAxios = async () => {
-  const { data } = await axios.get("http://localhost:5000/protected", {
+  const { data } = await axios.get(`${webURL}protected`, {
     withCredentials: true,
   });
   return data;
