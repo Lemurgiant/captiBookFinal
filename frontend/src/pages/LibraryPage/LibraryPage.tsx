@@ -1,4 +1,3 @@
-import React from "react";
 import BookCollectionLibrary from "../../features/bookCollectionLibrary";
 import AddBookButton from "./AddBookButton";
 import useLibraryPage from "./useLibraryPage";

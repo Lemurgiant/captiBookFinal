@@ -1,9 +1,8 @@
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { formatDate } from "../../../utils/formatDate";
 import { isWithinTheDateRange } from "../../../utils/helper";
 import useProductivityBar from "./useProductivityBar";
 import useBookTrackingApi from "../../../hooks/queries/useBookTrackingApi";
-import { productivityData } from "../../interface";
 import { dateRange } from "../interface";
 import { Session } from "../../../interfaces/globalState";
 import { mapToSessionCollection } from "../../../global/mapper";

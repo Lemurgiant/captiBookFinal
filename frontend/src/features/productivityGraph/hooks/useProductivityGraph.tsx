@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { productivityGraphFilterVal } from "../interface";
 import useDateRange from "./useDateRange";
 import useProductivityBarWithData from "./useProductivityBarWithData";

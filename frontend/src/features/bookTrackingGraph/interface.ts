@@ -1,5 +1,4 @@
 import { SelectChangeEvent } from "@mui/material";
-import { Book, BusinessMetrics } from "../interface";
 
 export type bookTrackingBarDisplayState = [
   string | null,

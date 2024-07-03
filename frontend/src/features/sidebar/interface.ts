@@ -1,7 +1,6 @@
 // BrandLogo.tsx
 
 import { HTMLAttributes } from "react";
-import { NavLinkProps } from "react-router-dom";
 
 export interface BrandLogoProps {
   isExpanded: boolean;

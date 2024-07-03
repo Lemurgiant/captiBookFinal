@@ -1,6 +1,5 @@
 import { ObjectId } from "mongodb";
 import { CaptiBookData } from "../../interfaces/globalState";
-import { Book, BookTrackingData } from "../interface";
 
 export interface useHabitTrackerProps {
   startingPageInputVal: number | null;

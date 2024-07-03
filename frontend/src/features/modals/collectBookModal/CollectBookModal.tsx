@@ -1,4 +1,3 @@
-import React from "react";
 import CollectBookModalInstance from "./CollectBookModalInstance";
 import { useCollectBookModal } from "./hooks/useCollectBookModal";
 import useBookCollectionQueryData from "../../../hooks/queries/useBookTrackingApi";

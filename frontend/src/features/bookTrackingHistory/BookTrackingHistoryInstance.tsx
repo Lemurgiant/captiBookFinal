@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PrimaryFrameUI from "../../components/PrimaryFrameUI";
 import { Box, Stack, Typography } from "@mui/material";
-import { BookTrackingData, productivityData } from "../interface";
-import useProductivityApi from "../../hooks/queries/useProductivityApi";
-import useBookTrackingApi from "../../hooks/queries/useBookTrackingApi";
 import BookUI from "../../components/BookUI";
 import styled, { useTheme } from "styled-components";
 import DividerUI from "../../components/DividerUI";
 import { TRANSITIONS } from "../../constants/constants";
-import HeaderUI from "../../components/HeaderUI";
-import SubheaderUI from "../../components/SubheaderUI";
 import { Session } from "../../interfaces/globalState";
 import { toDurationDisplay } from "../helper";
 import BarDatumMotion from "../../animations/BarDatumMotion";

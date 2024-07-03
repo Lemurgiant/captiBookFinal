@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { productivityBarData } from "../interface";
 import { productivityBarDatumInit } from "../constants";
 import { BarDatumState } from "../../interface";

@@ -1,12 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
 import { NORMAL_TRANSITION } from "../../constants";
 import {
   ExpandableProps,
   LogoutButtonProps,
-  NavButtonItem,
-  NavButtonProps,
   NavButtonWrapperProps,
 } from "../interface";
 

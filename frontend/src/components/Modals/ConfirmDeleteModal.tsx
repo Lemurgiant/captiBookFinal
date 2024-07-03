@@ -1,6 +1,5 @@
 import PrimaryModalUI from "../PrimaryModal/PrimaryModalUI";
 import Stack from "@mui/material/Stack";
-import PrimaryTinyButtonUI from "../PrimaryTinyButtonUI";
 import PrimarySquareButtonUI from "../PrimarySquareButtonUI";
 import { CheckMarkIconUI, CrossMarkIconUI } from "../Icons";
 import { useTheme } from "styled-components";
