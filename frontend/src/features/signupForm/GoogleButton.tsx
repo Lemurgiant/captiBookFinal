@@ -27,7 +27,7 @@ interface GoogleButtonProps extends HTMLAttributes<HTMLDivElement> {
   label: string;
 }
 const handleGoogle = async () => {
-  window.location.href = `${webURL}/auth/google`;
+  window.location.href = `${webURL}auth/google`;
 };
 const GoogleButton: React.FC<GoogleButtonProps> = ({ label, ...props }) => {
   return (
