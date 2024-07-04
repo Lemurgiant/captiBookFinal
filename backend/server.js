@@ -40,7 +40,7 @@ app.use(passport.session());
 
 // CORS setup
 const corsOptions = {
-  origin: "https://6684e8d02197d593c754b4a7--lucent-quokka-c30137.netlify.app", // Frontend URL
+  origin: "https://66860482f80ea6430d12bf3b--luxury-sable-a66764.netlify.app", // Frontend URL
   credentials: true, // Allow cookies to be sent
 };
 app.use(cors(corsOptions));
@@ -58,9 +58,9 @@ app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
     successRedirect:
-      "https://6684e8d02197d593c754b4a7--lucent-quokka-c30137.netlify.app/",
+      "https://66860482f80ea6430d12bf3b--luxury-sable-a66764.netlify.app/",
     failureRedirect:
-      "https://6684e8d02197d593c754b4a7--lucent-quokka-c30137.netlify.app/",
+      "https://66860482f80ea6430d12bf3b--luxury-sable-a66764.netlify.app/",
   })
 );
 
