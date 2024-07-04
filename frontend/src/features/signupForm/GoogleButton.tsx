@@ -1,6 +1,7 @@
 import React, { HTMLAttributes } from "react";
 import { FcGoogle } from "react-icons/fc";
 import styled from "styled-components";
+import { webURL } from "../services";
 
 const GoogleButtonWrapper = styled.div`
   height: 2.6rem;
@@ -26,7 +27,7 @@ interface GoogleButtonProps extends HTMLAttributes<HTMLDivElement> {
   label: string;
 }
 const handleGoogle = async () => {
-  window.location.href = "http://localhost:5000/auth/google";
+  window.location.href = `${webURL}/auth/google`;
 };
 const GoogleButton: React.FC<GoogleButtonProps> = ({ label, ...props }) => {
   return (
