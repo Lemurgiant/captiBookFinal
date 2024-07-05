@@ -72,23 +72,16 @@ app.get(
 );
 
 // Protected route
-app.get("/protected", (req, res) => {
-  console.log("protected responds ", req.isAuthenticated());
-  if (req.isAuthenticated()) {
-    const userInfo = { ...req.user }; // Create a copy of req.user
-    delete userInfo._doc._id; // Delete _id
-    delete userInfo._doc.googleId; // Delete googleId
+app.get("/protected", passport.authenticate("local"), (req, res) => {
+  console.log("protected responds true");
+  const userInfo = { ...req.user }; // Create a copy of req.user
+  delete userInfo._doc._id; // Delete _id
+  delete userInfo._doc.googleId; // Delete googleId
 
-    res.status(200).json({
-      isLoggedIn: true,
-      userInfo: userInfo._doc,
-    });
-  } else {
-    res.status(200).json({
-      isLoggedIn: false,
-      userInfo: null,
-    });
-  }
+  res.status(200).json({
+    isLoggedIn: true,
+    userInfo: userInfo._doc,
+  });
 });
 
 app.get("/logout", (req, res, next) => {
