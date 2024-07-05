@@ -9,6 +9,9 @@ import session from "express-session";
 import User from "./models/userModel.js";
 import nodemailer from "nodemailer";
 
+const CLIENT_URL = "https://luxury-sable-a66764.netlify.app";
+const LOCAL_URL = "http://localhost:5173";
+
 dotenv.config();
 connectDB();
 
@@ -40,7 +43,7 @@ app.use(passport.session());
 
 // CORS setup
 const corsOptions = {
-  origin: "https://66861f5e61c16b6233db6594--luxury-sable-a66764.netlify.app", // Frontend URL
+  origin: process.env.NODE_ENV === "production" ? CLIENT_URL : LOCAL_URL, // Frontend URL
   credentials: true, // Allow cookies to be sent
 };
 app.use(cors(corsOptions));
@@ -58,14 +61,19 @@ app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
     successRedirect:
-      "https://66861f5e61c16b6233db6594--luxury-sable-a66764.netlify.app/",
+      process.env.NODE_ENV === "production"
+        ? `${CLIENT_URL}/`
+        : `${LOCAL_URL}/`,
     failureRedirect:
-      "https://66861f5e61c16b6233db6594--luxury-sable-a66764.netlify.app/",
+      process.env.NODE_ENV === "production"
+        ? `${CLIENT_URL}/`
+        : `${LOCAL_URL}/`,
   })
 );
 
 // Protected route
 app.get("/protected", (req, res) => {
+  console.log("protected responds ", req.isAuthenticated());
   if (req.isAuthenticated()) {
     const userInfo = { ...req.user }; // Create a copy of req.user
     delete userInfo._doc._id; // Delete _id
