@@ -4,6 +4,9 @@ import { Strategy as LocalStrategy } from "passport-local";
 import User from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import { isValidEmail } from "../utils/helpers/helpers.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 passport.use(
   new LocalStrategy(
@@ -63,6 +66,7 @@ passport.use(
   )
 );
 passport.serializeUser((user, done) => {
+  console.log(user.id, " serialized");
   done(null, user.id);
 });
 passport.deserializeUser(async (id, done) => {
