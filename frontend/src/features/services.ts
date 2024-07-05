@@ -19,8 +19,10 @@ import {
 //   console.error("Failed to fetch productivity data:", error);
 //   return []; // Return an empty array or appropriate default value on error
 // }
-
-export const webURL = "https://captibookfinal-1.onrender.com/";
+const isProduction = false;
+export const webURL = isProduction
+  ? "https://captibookfinal-1.onrender.com/"
+  : "http://localhost:5000/";
 
 export async function tryCatchAxiosGet<T>(
   config: AxiosRequestConfig
