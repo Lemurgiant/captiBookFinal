@@ -19,7 +19,7 @@ import {
 //   console.error("Failed to fetch productivity data:", error);
 //   return []; // Return an empty array or appropriate default value on error
 // }
-const isProduction = false;
+const isProduction = true;
 export const webURL = isProduction
   ? "https://captibookfinal-1.onrender.com/"
   : "http://localhost:5000/";

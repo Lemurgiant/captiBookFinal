@@ -9,7 +9,7 @@ import session from "express-session";
 import User from "./models/userModel.js";
 import nodemailer from "nodemailer";
 
-const CLIENT_URL = "https://luxury-sable-a66764.netlify.app";
+const CLIENT_URL = "https://captibookfinal-2.onrender.com/";
 const LOCAL_URL = "http://localhost:5173";
 
 dotenv.config();
