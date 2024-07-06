@@ -24,6 +24,7 @@ passport.use(
         if (!isMatch) {
           return done(null, false, { message: "Wrong password" });
         }
+        console.log("localstrategy accepted");
         return done(null, user);
       } catch (error) {
         return done(error);
