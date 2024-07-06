@@ -119,6 +119,12 @@ router.post("/login", (req, res, next) => {
         return res.status(500).json({ message: "Internal server error" });
       }
       console.log("auth success");
+      res.cookie("myCookie", "cookieValue", {
+        maxAge: 24 * 60 * 60 * 1000, // 24 hours
+        httpOnly: true, // Cookie accessible only by the web server
+        secure: true, // Cookie only sent over HTTPS
+        sameSite: "none", // Protect against CSRF attacks
+      });
       return res.status(200).json({ message: "Login successful", user });
     });
   })(req, res, next);
