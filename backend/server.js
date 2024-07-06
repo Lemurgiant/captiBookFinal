@@ -32,6 +32,7 @@ app.use(
     cookie: {
       secure: false,
       httpOnly: true,
+      sameSite: "none",
     },
   })
 );
