@@ -4,8 +4,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./db/connectDB.js";
 import router from "./router/routes.js";
 import cors from "cors";
-import Passport from "passport";
-import passport from "./auth/auth.js";
+import passport from "passport";
 import session from "express-session";
 import User from "./models/userModel.js";
 import nodemailer from "nodemailer";
@@ -37,8 +36,8 @@ app.use(
 );
 
 // Passport initialization
-app.use(Passport.initialize());
-app.use(Passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // CORS setup
 const corsOptions = {
