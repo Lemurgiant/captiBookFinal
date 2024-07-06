@@ -32,7 +32,7 @@ import {
 import User from "../models/userModel.js";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
-import passport from "passport";
+import passport from "../auth/auth.js";
 import { isValidEmail, isValidPassword } from "../utils/helpers/helpers.js";
 import os from "os";
 import {

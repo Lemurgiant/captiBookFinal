@@ -4,7 +4,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./db/connectDB.js";
 import router from "./router/routes.js";
 import cors from "cors";
-import passport from "passport";
+import passport from "./auth/auth.js";
 import session from "express-session";
 import User from "./models/userModel.js";
 import nodemailer from "nodemailer";
