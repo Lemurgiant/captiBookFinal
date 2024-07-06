@@ -16,6 +16,9 @@ const useAuthApi = () => {
   }>({
     queryKey: ["isAuthenticated"],
     queryFn: fetchAuthStatusAxios,
+    onSuccess: (data) => {
+      console.log("Query successful!", data);
+    },
     retry: false,
   });
 

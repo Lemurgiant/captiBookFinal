@@ -12,6 +12,9 @@ const useRegisterApi = () => {
   } = useMutation({
     mutationKey: ["loginMutate"],
     mutationFn: loginAxios,
+    onSuccess: () => {
+      window.location.href = "/";
+    },
     onError: (error: any) => {
       setLoginMutateErrMessage(error.response.data.message);
     },
