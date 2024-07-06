@@ -2,7 +2,7 @@ import { bookCollectionModel } from "../models/bookCollectionModel.js";
 import { sessionCollectionModel } from "../models/sessionCollectionModel.js";
 import { handleRequest, sendResponse } from "../utils/controlHelpers.js";
 import { positiveNumberCheck } from "./errorFilter.js";
-import passport from "../auth/auth.js";
+import passport from "passport";
 import mongoose from "mongoose";
 
 export const getAllProductivityData = async (req, res) => {
