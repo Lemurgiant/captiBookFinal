@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./db/connectDB.js";
 import router from "./router/routes.js";
 import cors from "cors";
+import Passport from "passport";
 import passport from "./auth/auth.js";
 import session from "express-session";
 import User from "./models/userModel.js";
@@ -31,15 +32,13 @@ app.use(
     saveUninitialized: false,
     cookie: {
       secure: true,
-      httpOnly: true,
-      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
     },
   })
 );
 
 // Passport initialization
-app.use(passport.initialize());
-app.use(passport.session());
+app.use(Passport.initialize());
+app.use(Passport.session());
 
 // CORS setup
 const corsOptions = {
