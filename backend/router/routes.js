@@ -40,6 +40,7 @@ import {
   updateUserImage,
   updateUserTheme,
 } from "../controllers/userController.js";
+import { generateAvatarLink } from "../controllers/avatarGenerator.js";
 const router = express.Router();
 
 // router.get("/get-productivity-data", fetchProductivityData);
@@ -139,6 +140,8 @@ router.post("/signup", async (req, res) => {
       return res.status(400).json({ message: "User already exists" });
     }
 
+    const avatarLink = generateAvatarLink("m");
+
     // Create new user
     const user = new User({
       email,
@@ -149,6 +152,7 @@ router.post("/signup", async (req, res) => {
       verificationToken: crypto.randomBytes(20).toString("hex"),
       verificationTokenExpires: Date.now() + 3600000, // 1 hour
       theme: 0,
+      image: avatarLink,
     });
 
     // Save user
