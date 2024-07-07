@@ -56,19 +56,42 @@ app.get(
   passport.authenticate("google", { scope: ["email", "profile"] })
 );
 
-app.get(
-  "/auth/google/callback",
-  passport.authenticate("google", {
-    successRedirect:
-      process.env.NODE_ENV === "production"
-        ? `${CLIENT_URL}/`
-        : `${LOCAL_URL}/`,
-    failureRedirect:
-      process.env.NODE_ENV === "production"
-        ? `${CLIENT_URL}/`
-        : `${LOCAL_URL}/`,
-  })
-);
+app.get("/auth/google/callback", (req, res, next) => {
+  passport.authenticate("google", (err, user, info) => {
+    if (err) {
+      console.error("Error during Google OAuth:", err);
+      const redirectUrl =
+        process.env.NODE_ENV === "production"
+          ? `${CLIENT_URL}/error`
+          : `${LOCAL_URL}/error`;
+      return res.redirect(redirectUrl); // Redirect to an error page based on environment
+    }
+    if (!user) {
+      console.error("Authentication failed:", info.message);
+      const redirectUrl =
+        process.env.NODE_ENV === "production"
+          ? `${CLIENT_URL}/login`
+          : `${LOCAL_URL}/login`;
+      return res.redirect(redirectUrl); // Redirect to login page based on environment
+    }
+    req.logIn(user, (err) => {
+      if (err) {
+        console.error("Error during login:", err);
+        const redirectUrl =
+          process.env.NODE_ENV === "production"
+            ? `${CLIENT_URL}/error`
+            : `${LOCAL_URL}/error`;
+        return res.redirect(redirectUrl); // Redirect to an error page based on environment
+      }
+      // Successful authentication
+      const redirectUrl =
+        process.env.NODE_ENV === "production"
+          ? `${CLIENT_URL}/dashboard`
+          : `${LOCAL_URL}/dashboard`;
+      return res.redirect(redirectUrl); // Redirect to dashboard or profile page based on environment
+    });
+  })(req, res, next);
+});
 
 // Protected route
 app.get("/protected", (req, res) => {
