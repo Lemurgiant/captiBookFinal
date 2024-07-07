@@ -10,12 +10,11 @@ import useBookInsightsPage from "./useBookInsightsPage";
 
 const BookInsightsPageWrapper = styled.div`
   width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   gap: 4rem;
   align-items: center;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 `;
 
 const DetailsHead = styled.div`
@@ -29,7 +28,6 @@ const DetailsHead = styled.div`
 
 const ManagementBody = styled.div`
   width: 80%;
-  height: 10rem;
   display: flex;
 `;
 const BookInsightsPageContext = createContext<useBookInsightsPageProps>(

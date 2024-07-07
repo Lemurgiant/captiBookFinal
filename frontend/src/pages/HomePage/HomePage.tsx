@@ -19,10 +19,11 @@ const HomePage: React.FC = () => {
 
 const HomePageLayoutUI = styled.div`
   width: 100%;
-  height: 100%;
+  height: fit-content;
   display: flex;
   justify-content: center;
   gap: 2rem;
+  padding-bottom: 2rem;
 `;
 
 export default HomePage;

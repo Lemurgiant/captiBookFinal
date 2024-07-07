@@ -127,7 +127,11 @@ const BookTrackingHistoryInstance: React.FC<BookTrackingHistoryProps> = ({
 }) => {
   const isSessionCollectionEmpty = sessionCollection.length === 0;
   return (
-    <PrimaryFrameUI width="40rem" height="100%" style={{ overflow: "hidden" }}>
+    <PrimaryFrameUI
+      width="40rem"
+      height="50rem"
+      style={{ overflow: "hidden", display: "flex", flexDirection: "column" }}
+    >
       <BookTrackingHistoryInstanceHead>
         <LabelHead>HISTORY</LabelHead>
       </BookTrackingHistoryInstanceHead>
