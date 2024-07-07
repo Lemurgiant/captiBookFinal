@@ -56,6 +56,7 @@ passport.use(
         if (user) {
           return done(null, user);
         } else {
+          console.log("new user created");
           user = await User.create(newUser);
           return done(null, user);
         }
