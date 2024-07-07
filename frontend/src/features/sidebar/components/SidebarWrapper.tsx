@@ -10,7 +10,8 @@ import { NORMAL_TRANSITION } from "../../constants";
 
 const SidebarWrapper = styled.div<ExpandableProps>`
   height: 100%;
-  position: fixed;
+  position: absolute;
+  z-index: 1000;
   width: ${({ isExpanded }) =>
     isExpanded ? SIDEBAR_WIDTH_EXPANDED : SIDEBAR_WIDTH_COLLAPSED};
   padding: 1.5rem 0;
