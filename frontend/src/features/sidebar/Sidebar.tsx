@@ -10,6 +10,7 @@ import useSidebar from "./useSidebar";
 import { BiLogOut } from "react-icons/bi";
 import LogoutButton from "./components/LogoutButton";
 import useAuthApi from "../../hooks/queries/useAuthApi";
+import { webURL } from "../services";
 //----------------------------------------------------------------//
 
 const renderButtonGroup: React.FC<renderButtonGroupProps> = ({
@@ -36,7 +37,7 @@ const Sidebar: React.FC = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("http://localhost:5000/logout", {
+      const response = await fetch(`${webURL}logout`, {
         method: "GET",
         credentials: "include", // Send cookies along with the request
       });

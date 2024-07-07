@@ -18,12 +18,11 @@ connectDB();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware setup
 app.use(express.json({ limit: "15mb" }));
 app.use(cookieParser());
 app.use(express.urlencoded({ limit: "15mb", extended: true }));
 app.set("trust proxy", 1);
-// Session setup
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -106,8 +105,8 @@ app.get("/logout", (req, res, next) => {
       res.clearCookie("connect.sid", {
         path: "/",
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        sameSite: "lax",
+        secure: true,
+        sameSite: "none",
       });
 
       res.status(200).json({ message: "Logout successful" });
