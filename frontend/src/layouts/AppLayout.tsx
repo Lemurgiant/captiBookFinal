@@ -13,8 +13,6 @@ const MainBarWrapper = styled.main`
   height: 100%;
   width: 100%;
   box-sizing: border-box;
-  padding: 3rem 0;
-  padding-left: 8rem;
   background-color: ${({ theme }) => theme.bg.dark};
   overflow-y: auto;
   display: flex;
