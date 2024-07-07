@@ -110,7 +110,7 @@ router.post("/update-user-theme", isAuthed, updateUserTheme);
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) {
-      return res.status(500).json({ message: "Internal server error" });
+      return res.status(500).json({ message: info });
     }
     if (!user) {
       return res.status(401).json(info);
