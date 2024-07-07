@@ -37,7 +37,7 @@ function Aside({ habitTracker }: AsideWrapperProps) {
     return useMemo(
       () => (
         <Stack alignItems={"center"} gap="0.3rem">
-          <Typography variant="inherit" fontSize="13px">
+          <Typography variant="inherit" fontSize="12px">
             {label}
           </Typography>
           <NumberInputBasic
