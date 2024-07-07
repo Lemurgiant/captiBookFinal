@@ -19,6 +19,7 @@ const InsightsManagementInstanceWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding-bottom: 2rem;
 `;
 
 const InsightsManagementBody = styled(PrimaryFrameUI)`
