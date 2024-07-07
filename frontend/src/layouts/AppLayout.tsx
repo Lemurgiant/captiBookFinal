@@ -8,6 +8,7 @@ const AppLayoutWrapper = styled.div`
   height: 100vh;
   width: 100vw;
   position: relative;
+  overflow: hidden;
 `;
 
 const MainBarWrapper = styled.main`
