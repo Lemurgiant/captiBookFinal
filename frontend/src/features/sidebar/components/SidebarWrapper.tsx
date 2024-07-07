@@ -15,7 +15,7 @@ const SidebarWrapper = styled.div<ExpandableProps>`
     isExpanded ? SIDEBAR_WIDTH_EXPANDED : SIDEBAR_WIDTH_COLLAPSED};
   padding: 1.5rem 0;
   display: flex;
-  background: ${({ theme }) => theme.main};
+  background: ${({ theme }) => theme.mainGradient};
   flex-direction: column;
   gap: 1.2rem;
   align-items: center;
