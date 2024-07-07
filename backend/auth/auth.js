@@ -34,11 +34,11 @@ passport.use(
 );
 //ff
 passport.use(
-  new GoogleStrategy( //xd
+  new GoogleStrategy(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "/auth/google/callback",
+      callbackURL: "https://captibookfinal-1.onrender.com/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
       const newUser = {
@@ -56,12 +56,12 @@ passport.use(
         if (user) {
           return done(null, user);
         } else {
-          console.log("new user created");
+          console.log("New user created");
           user = await User.create(newUser);
           return done(null, user);
         }
       } catch (err) {
-        console.error(err);
+        console.error("Error during Google authentication:", err);
         return done(err, false);
       }
     }
