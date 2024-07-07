@@ -38,7 +38,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "https://captibookfinal-1.onrender.com/auth/google/callback",
+      callbackURL: "/auth/google/callback",
     },
     async (accessToken, refreshToken, profile, done) => {
       const newUser = {
@@ -54,19 +54,31 @@ passport.use(
         let user = await User.findOne({ googleId: profile.id });
 
         if (user) {
+          // User already exists, proceed with login
           return done(null, user);
         } else {
-          console.log("New user created");
-          user = await User.create(newUser);
-          return done(null, user);
+          // Check if email already exists for a different user
+          user = await User.findOne({ email: profile.emails[0].value });
+
+          if (user) {
+            // Email exists for another user, handle accordingly (merge accounts or prompt user)
+            console.log("Email already exists:", profile.emails[0].value);
+            return done(null, false, { message: "Email already registered" });
+          } else {
+            // Create a new user
+            console.log("Creating new user");
+            user = await User.create(newUser);
+            return done(null, user);
+          }
         }
       } catch (err) {
-        console.error("Error during Google authentication:", err);
+        console.error("Error during Google OAuth:", err);
         return done(err, false);
       }
     }
   )
 );
+
 passport.serializeUser((user, done) => {
   console.log(user.id, " serialized");
   done(null, user.id);
