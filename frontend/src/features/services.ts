@@ -19,7 +19,7 @@ import {
 //   console.error("Failed to fetch productivity data:", error);
 //   return []; // Return an empty array or appropriate default value on error
 // }
-const isProduction = true;
+const isProduction = false;
 export const webURL = isProduction
   ? "https://captibookfinal-1.onrender.com/"
   : "http://localhost:5000/";
@@ -411,6 +411,59 @@ export async function updateUserThemeAxios(theme: 0 | 1) {
     withCredentials: true,
     data: data,
   };
+  const response = await axios.request(config);
+  return response.data;
+}
+
+export async function checkEmailAxios(email: string) {
+  const data = JSON.stringify({ email });
+  const config = {
+    method: "post",
+    url: `${webURL}api/check-email`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    withCredentials: false,
+    data: data,
+  };
+  const response = await axios.request(config);
+  return response.data;
+}
+
+export async function verifyOtpAxios({
+  otp,
+  email,
+}: {
+  otp: string;
+  email: string;
+}) {
+  const data = JSON.stringify({ otp, email });
+  const config = {
+    method: "post",
+    url: `${webURL}api/verify-otp`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    withCredentials: true,
+    data: data,
+  };
+
+  const response = await axios.request(config);
+  return response.data;
+}
+
+export async function regenerateOtpAxios(email: string) {
+  const data = JSON.stringify({ email });
+  const config = {
+    method: "post",
+    url: `${webURL}api/regenerate-otp`,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    withCredentials: true,
+    data: data,
+  };
+
   const response = await axios.request(config);
   return response.data;
 }

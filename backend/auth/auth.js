@@ -5,10 +5,12 @@ import User from "../models/userModel.js";
 import bcrypt from "bcryptjs";
 import { isValidEmail } from "../utils/helpers/helpers.js";
 import dotenv from "dotenv";
+import Otp from "../models/otpModel.js";
 
 dotenv.config();
 
 passport.use(
+  "local",
   new LocalStrategy(
     { usernameField: "email" },
     async (email, password, done) => {
@@ -32,6 +34,7 @@ passport.use(
     }
   )
 );
+
 //ff
 passport.use(
   new GoogleStrategy(

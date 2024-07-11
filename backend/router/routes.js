@@ -41,6 +41,9 @@ import {
   updateUserTheme,
 } from "../controllers/userController.js";
 import { generateAvatarLink } from "../controllers/avatarGenerator.js";
+import { handleRequest, sendResponse } from "../utils/controlHelpers.js";
+import Otp from "../models/otpModel.js";
+import { generateOtp } from "../controllers/otpContoller.js";
 const router = express.Router();
 
 // router.get("/get-productivity-data", fetchProductivityData);
@@ -106,6 +109,151 @@ router.post(
 router.post("/update-user-image", isAuthed, updateUserImage);
 router.post("/update-user-display-name", isAuthed, updateUserDisplayName);
 router.post("/update-user-theme", isAuthed, updateUserTheme);
+
+router.post("/regenerate-otp", async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    // Check if user exists
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "User not registered" });
+    }
+
+    if (user.googleId && !user.password) {
+      // Generate a new OTP
+      await Otp.deleteOne({ email });
+      const otp = await generateOtp(user.email);
+      const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false,
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+        },
+        tls: {
+          rejectUnauthorized: false, // Accept self-signed certificates
+        },
+      });
+
+      const mailOptions = {
+        from: "CAPTIBOOK",
+        to: user.email,
+        subject: "Email Verification",
+        text: `Your verification code is: ${otp}`,
+      };
+
+      await transporter.sendMail(mailOptions);
+      return res.status(200).json({ message: "generated" });
+    }
+  } catch (error) {
+    console.error("Error in regenerating otp:", error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+router.post("/check-email", async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    // Check if user exists
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "User not registered" });
+    }
+
+    if (user.googleId && !user.password) {
+      // Find existing OTPs for the user and remove them
+      const existingOtp = await Otp.findOne({ email });
+      if (existingOtp) {
+        res
+          .status(200)
+          .json({ isGoogleUser: true, otpCreatedAt: existingOtp.createdAt });
+      } else {
+        // Generate a new OTP
+        const otp = await generateOtp(user.email);
+        const transporter = nodemailer.createTransport({
+          host: "smtp.gmail.com",
+          port: 587,
+          secure: false, // true for 465, false for other ports
+          auth: {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASS,
+          },
+          tls: {
+            rejectUnauthorized: false, // Accept self-signed certificates
+          },
+        });
+
+        const mailOptions = {
+          from: "CAPTIBOOK",
+          to: user.email,
+          subject: "Email Verification",
+          text: `Your verification code is: ${otp}`,
+        };
+
+        await transporter.sendMail(mailOptions);
+        return res.status(200).json({ isGoogleUser: true });
+      }
+    } else {
+      return res.status(200).json({ isGoogleUser: false });
+    }
+  } catch (error) {
+    console.error("Error in /check-email:", error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+// function verifyOtp(otp) {
+//   const currentTime = Date.now();
+
+//   if (req.session.otp && req.session.otp === otp) {
+//     const otpAge = (currentTime - req.session.otpTimestamp) / 1000 / 60; // Age in minutes
+
+//     if (otpAge <= 5) {
+//       return "OTP is valid.";
+//     } else {
+//       return "OTP is expired.";
+//     }
+//   } else {
+//     return "OTP is invalid.";
+//   }
+// }
+
+router.post("/verify-otp", (req, res) => {
+  handleRequest(req, res, async () => {
+    const { otp, email } = req.body;
+
+    const matchingOtp = await Otp.findOne({ email });
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not registered" });
+    }
+    if (matchingOtp) {
+      const hashedInputOtp = crypto
+        .createHash("sha256")
+        .update(otp)
+        .digest("hex");
+
+      if (hashedInputOtp === matchingOtp.otp) {
+        await Otp.deleteOne({ email });
+        req.logIn(user, (err) => {
+          if (err) {
+            console.log(err);
+            return res.status(500).json({ message: "Internal server error" });
+          }
+          return res.status(200).json({ message: "Login successful", user });
+        });
+      } else {
+        return res.status(404).json({ message: "Invalid OTP" });
+      }
+    } else {
+      return res.status(404).json({ message: "User not registered" });
+    }
+  });
+});
 
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {

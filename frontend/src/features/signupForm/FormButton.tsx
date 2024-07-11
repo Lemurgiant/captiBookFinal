@@ -3,7 +3,7 @@ import PrimaryButtonUI from "../../components/PrimaryButtonUI";
 import PrimarySpinner from "../../components/PrimarySpinner";
 import { useTheme } from "styled-components";
 
-interface FormButtonProps extends HTMLAttributes<HTMLDivElement> {
+interface FormButtonProps extends PrimaryButtonUIProps {
   isPending: boolean;
   label: string;
 }

@@ -8,6 +8,8 @@ import passport from "./auth/auth.js";
 import session from "express-session";
 import User from "./models/userModel.js";
 import nodemailer from "nodemailer";
+import MongoStore from "connect-mongo";
+import mongoose from "mongoose";
 
 const CLIENT_URL = "https://captibookfinal-2.onrender.com";
 const LOCAL_URL = "http://localhost:5173";
@@ -29,9 +31,9 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      secure: true,
+      secure: process.env.NODE_ENV === "production" ? true : false,
       httpOnly: false,
-      sameSite: "none",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
     },
   })
 );

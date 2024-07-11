@@ -1,6 +1,7 @@
+import { HTMLAttributes } from "react";
 import styled from "styled-components";
 
-interface PrimaryButtonUIProps {
+export interface PrimaryButtonUIProps extends HTMLAttributes<HTMLDivElement> {
   bgcolor?: string;
   bgcolorActive?: string;
   isDisabled?: boolean;
