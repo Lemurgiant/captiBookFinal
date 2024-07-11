@@ -1,5 +1,7 @@
-import React, { HTMLAttributes } from "react";
-import PrimaryButtonUI from "../../components/PrimaryButtonUI";
+import React from "react";
+import PrimaryButtonUI, {
+  PrimaryButtonUIProps,
+} from "../../components/PrimaryButtonUI";
 import PrimarySpinner from "../../components/PrimarySpinner";
 import { useTheme } from "styled-components";
 

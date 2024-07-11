@@ -38,7 +38,7 @@ const useLoginForm = () => {
   const [step, setStep] = useState<"email" | "otp" | "password">("email");
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
-  const { timerDuration, isActive, startTimer, resetTimer } = useTimer();
+  const { timerDuration, isActive, startTimer } = useTimer();
   const handleInputChange = (e: any, field: any) => {
     setLoginInputValues((prevValues) => ({
       ...prevValues,

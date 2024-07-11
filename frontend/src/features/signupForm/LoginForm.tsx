@@ -6,8 +6,6 @@ import GoogleButton from "./GoogleButton";
 import ErrorTypography from "./ErrorTypography";
 import FormButton from "./FormButton";
 import OTPField from "./OTPField";
-import { useEffect, useState } from "react";
-import PrimaryButtonUI from "../../components/PrimaryButtonUI";
 import { useTheme } from "styled-components";
 
 const LoginForm = () => {

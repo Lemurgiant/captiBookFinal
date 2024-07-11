@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 
 const OTPInput = styled.input`
   width: 40px;
@@ -36,7 +36,7 @@ const OTPField = ({
     }
   }, [otpStr]);
 
-  const handleChange = (e, index) => {
+  const handleChange = (e: any, index: number) => {
     const value = e.target.value;
     if (/^[0-9]$/.test(value) || value === "") {
       const newOtp = [...otp];
@@ -54,13 +54,13 @@ const OTPField = ({
     }
   };
 
-  const handleBackspace = (e, index) => {
+  const handleBackspace = (e: any, index: number) => {
     if (e.key === "Backspace" && !otp[index] && index > 0) {
       inputRefs.current[index - 1].focus();
     }
   };
 
-  const handlePaste = (e) => {
+  const handlePaste = (e: any) => {
     e.preventDefault();
     const pasteData = e.clipboardData.getData("text").slice(0, length);
     const newOtp = pasteData.split("").slice(0, length);
@@ -76,7 +76,6 @@ const OTPField = ({
       onComplete(newOtp.join(""));
     }
   };
-  const theme = useTheme();
 
   return (
     <div style={{ display: "flex", justifyContent: "center", gap: "6px" }}>
@@ -89,7 +88,7 @@ const OTPField = ({
           onChange={(e) => handleChange(e, index)}
           onKeyDown={(e) => handleBackspace(e, index)}
           onPaste={handlePaste}
-          ref={(el) => (inputRefs.current[index] = el)}
+          ref={(el) => (inputRefs.current[index] = el!)}
         />
       ))}
     </div>
